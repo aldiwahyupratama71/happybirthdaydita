@@ -226,7 +226,7 @@ function Signature() {
 /* ─────────────────────────────────────────────
    Main component
    ───────────────────────────────────────────── */
-export default function Letter() {
+export default function Letter({ id }) {
   const headerRef = useRef(null)
   const headerIn  = useInView(headerRef, { once: true, margin: '-10% 0px' })
 
@@ -234,7 +234,7 @@ export default function Letter() {
   const cardIn    = useInView(cardRef, { once: true, margin: '-6% 0px' })
 
   return (
-    <section
+    <section id={id}
       style={{
         /* Latar section: sangat gelap warm — membedakan dari section lain */
         background:  'linear-gradient(180deg, var(--bg-primary) 0%, color-mix(in srgb, var(--bg-primary) 98%, var(--text-primary)) 100%)',
@@ -258,23 +258,28 @@ export default function Letter() {
             Section header
             ══════════════════ */}
         <div ref={headerRef} style={{ marginBottom: 'clamp(3rem, 7vh, 5rem)' }}>
-          <motion.span
-            initial={{ opacity: 0, y: 14 }}
-            animate={headerIn ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-            style={{
-              display:       'block',
-              fontFamily:    "'Manrope', sans-serif",
-              fontSize:      '0.6rem',
-              fontWeight:    500,
-              letterSpacing: '0.28em',
-              color:         'var(--text-secondary)',
-              textTransform: 'uppercase',
-              marginBottom:  '1.75rem',
-            }}
-          >
-            {'15\u00a0\u00a0/\u00a0\u00a0Letter For You'}
-          </motion.span>
+          
+
+          {/* Section label */}
+        <motion.span
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{
+            display: 'block',
+            fontFamily: "'Manrope', sans-serif",
+            fontSize: '0.6rem',
+            fontWeight: 500,
+            letterSpacing: '0.28em',
+            color: 'var(--text-secondary)',
+            textTransform: 'uppercase',
+            marginBottom: '1.75rem',
+          }}
+        >
+          {'13\u00a0\u00a0/\u00a0\u00a0Letter For You'}
+        </motion.span>
+          
 
           <motion.h2
             initial={{ opacity: 0, y: 18 }}

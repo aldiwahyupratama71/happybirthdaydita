@@ -198,7 +198,7 @@ function TimelineItem({ item, index }) {
 /* ─────────────────────────────────────────────
    Main component
    ───────────────────────────────────────────── */
-export default function Timeline() {
+export default function Timeline({ id }) {
   const [introQuote] = getQuotes('timeline')
   const sectionRef   = useRef(null)
   const lineRef      = useRef(null)
@@ -217,7 +217,7 @@ export default function Timeline() {
   const lineHeight = useTransform(scrollYProgress, [0, 1], ['0%', '100%'])
 
   return (
-    <section
+    <section id={id}
       ref={sectionRef}
       style={{
         minHeight:   '100vh',
@@ -234,23 +234,28 @@ export default function Timeline() {
         ref={headerRef}
         style={{ maxWidth: '640px', marginBottom: 'clamp(3.5rem, 8vh, 5.5rem)' }}
       >
+        
+
+        {/* Section label */}
         <motion.span
           initial={{ opacity: 0, y: 14 }}
-          animate={headerIn ? { opacity: 1, y: 0 } : {}}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
           transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
           style={{
-            display:       'block',
-            fontFamily:    "'Manrope', sans-serif",
-            fontSize:      '0.6rem',
-            fontWeight:    500,
+            display: 'block',
+            fontFamily: "'Manrope', sans-serif",
+            fontSize: '0.6rem',
+            fontWeight: 500,
             letterSpacing: '0.28em',
-            color:         'var(--text-secondary)',
+            color: 'var(--text-secondary)',
             textTransform: 'uppercase',
-            marginBottom:  '1.75rem',
+            marginBottom: '1.75rem',
           }}
         >
-          {'04\u00a0\u00a0/\u00a0\u00a0Timeline'}
+          {'04\u00a0\u00a0/\u00a0\u00a0Our Journey'}
         </motion.span>
+        
 
         <motion.h2
           initial={{ opacity: 0, y: 18 }}

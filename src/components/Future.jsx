@@ -184,13 +184,28 @@ function Part1Header({ subtext }) {
 
   return (
     <div ref={ref} style={{ marginBottom: 'clamp(2.5rem, 6vh, 4rem)' }}>
-      <motion.span
-        initial={{ opacity: 0, y: 14 }}
-        animate={headerAnim(inView, 0)}
-        style={labelStyle}
-      >
-        {'12\u00a0\u00a0/\u00a0\u00a0If We Ever Try Again'}
-      </motion.span>
+      
+
+      {/* Section label */}
+        <motion.span
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{
+            display: 'block',
+            fontFamily: "'Manrope', sans-serif",
+            fontSize: '0.6rem',
+            fontWeight: 500,
+            letterSpacing: '0.28em',
+            color: 'var(--text-secondary)',
+            textTransform: 'uppercase',
+            marginBottom: '1.75rem',
+          }}
+        >
+          {'11\u00a0\u00a0/\u00a0\u00a0If We Ever Try Again'}
+        </motion.span>
+      
 
       <motion.h2
         initial={{ opacity: 0, y: 18 }}
@@ -250,13 +265,7 @@ function Part2Header() {
 
   return (
     <div ref={ref} style={{ marginBottom: 'clamp(2rem, 5vh, 3rem)' }}>
-      <motion.span
-        initial={{ opacity: 0, y: 14 }}
-        animate={headerAnim(inView, 0)}
-        style={labelStyle}
-      >
-        {'13\u00a0\u00a0/\u00a0\u00a0What I Want'}
-      </motion.span>
+      
 
       <motion.h2
         initial={{ opacity: 0, y: 18 }}
@@ -300,12 +309,12 @@ const labelStyle = {
 /* ─────────────────────────────────────────────
    Main component
    ───────────────────────────────────────────── */
-export default function Future() {
+export default function Future({ id }) {
   const [q1]   = getQuotes('future')
   const wants  = getQuotes('choice')   /* 4 kalimat "What I Want" */
 
   return (
-    <section
+    <section id={id}
       style={{
         background: 'linear-gradient(180deg, var(--bg-primary) 0%, color-mix(in srgb, var(--bg-primary) 98%, var(--text-primary)) 100%)',
         padding:    'clamp(5rem, 12vh, 9rem) clamp(1.5rem, 8vw, 8rem)',

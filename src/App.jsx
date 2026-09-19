@@ -48,20 +48,20 @@ function App() {
       <ThemeToggle />
 
       <main>
-        <section id="section-opening">       <Opening />       </section>
-        <section id="section-birthday">      <Birthday />      </section>
-        <section id="section-story">         <Story />         </section>
-        <section id="section-timeline">      <Timeline />      </section>
-        <section id="section-memories">      <Memories />      </section>
-        <section id="section-little-things"> <LittleThings />  </section>
-        <section id="section-reflection">    <Reflection />    </section>
-        <section id="section-realization">   <Realization />   </section>
-        <section id="section-growth">        <Growth />        </section>
-        <section id="section-feelings">      <Feelings />      </section>
-        <section id="section-future">        <Future />        </section>
-        <section id="section-choice">        <Choice />        </section>
-        <section id="section-letter">        <Letter />        </section>
-        <section id="section-final">         <Final />         </section>
+        <Opening id="section-opening" />
+        <Birthday id="section-birthday" />
+        <Story id="section-story" />
+        <Timeline id="section-timeline" />
+        <Memories id="section-memories" />
+        <LittleThings id="section-little-things" />
+        <Reflection id="section-reflection" />
+        <Realization id="section-realization" />
+        <Growth id="section-growth" />
+        <Feelings id="section-feelings" />
+        <Future id="section-future" />
+        <Choice id="section-choice" />
+        <Letter id="section-letter" />
+        <Final id="section-final" />
       </main>
     </>
   )

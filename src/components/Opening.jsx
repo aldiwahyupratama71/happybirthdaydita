@@ -37,7 +37,7 @@ const ctaVariant = {
 /* ─────────────────────────────────────────────
    Component
    ───────────────────────────────────────────── */
-export default function Opening() {
+export default function Opening({ id }) {
   const [line1, line2] = getQuotes('opening')
   const sectionRef = useRef(null)
 
@@ -50,7 +50,7 @@ export default function Opening() {
   }
 
   return (
-    <section
+    <section id={id}
       ref={sectionRef}
       style={{
         minHeight:      '100vh',

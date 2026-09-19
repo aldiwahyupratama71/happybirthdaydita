@@ -83,13 +83,13 @@ function LongLine({ text, index }) {
 /* ─────────────────────────────────────────────
    Main component
    ───────────────────────────────────────────── */
-export default function Feelings() {
+export default function Feelings({ id }) {
   const sentences = getQuotes('feelings')   /* 5 kalimat */
   const [s1, s2]  = sentences.slice(0, 2)  /* impactful  */
   const longLines = sentences.slice(2)      /* context    */
 
   return (
-    <section
+    <section id={id}
       style={{
         minHeight:      '100vh',
         background:     'var(--bg-primary)',
@@ -183,20 +183,22 @@ function SectionLabel() {
   const inView = useInView(ref, { once: true, margin: '-10% 0px' })
   return (
     <motion.span
-      ref={ref}
-      initial={{ opacity: 0 }}
-      animate={inView ? { opacity: 1 } : {}}
-      transition={{ duration: 1.2 }}
+      initial={{ opacity: 0, y: 14 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-10% 0px' }}
+      transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
       style={{
-        fontFamily:    "'Manrope', sans-serif",
-        fontSize:      '0.6rem',
-        fontWeight:    500,
+        display: 'block',
+        fontFamily: "'Manrope', sans-serif",
+        fontSize: '0.6rem',
+        fontWeight: 500,
         letterSpacing: '0.28em',
-        color:         'var(--divider)',
+        color: 'var(--text-secondary)',
         textTransform: 'uppercase',
+        marginBottom: '1.75rem',
       }}
     >
-      {'11\u00a0\u00a0/\u00a0\u00a0What I Still Feel'}
+      {'10\u00a0\u00a0/\u00a0\u00a0What I Still Feel'}
     </motion.span>
   )
 }

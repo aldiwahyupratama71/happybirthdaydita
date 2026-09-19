@@ -153,13 +153,13 @@ function ChangeCard({ item, index }) {
 /* ─────────────────────────────────────────────
    Main component
    ───────────────────────────────────────────── */
-export default function Growth() {
+export default function Growth({ id }) {
   const [q1]      = getQuotes('growth')
   const headerRef = useRef(null)
   const headerIn  = useInView(headerRef, { once: true, margin: '-10% 0px' })
 
   return (
-    <section
+    <section id={id}
       style={{
         minHeight:   '100vh',
         background:  'linear-gradient(180deg, var(--bg-primary) 0%, color-mix(in srgb, var(--bg-primary) 96%, var(--text-primary)) 100%)',
@@ -186,23 +186,28 @@ export default function Growth() {
             Header
             ══════════════════ */}
         <div ref={headerRef}>
-          <motion.span
-            initial={{ opacity: 0, y: 14 }}
-            animate={headerIn ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-            style={{
-              display:       'block',
-              fontFamily:    "'Manrope', sans-serif",
-              fontSize:      '0.6rem',
-              fontWeight:    500,
-              letterSpacing: '0.28em',
-              color:         'var(--text-secondary)',
-              textTransform: 'uppercase',
-              marginBottom:  '1.75rem',
-            }}
-          >
-            {'10\u00a0\u00a0/\u00a0\u00a0What I\'m Changing'}
-          </motion.span>
+
+
+
+          {/* Section label */}
+        <motion.span
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{
+            display: 'block',
+            fontFamily: "'Manrope', sans-serif",
+            fontSize: '0.6rem',
+            fontWeight: 500,
+            letterSpacing: '0.28em',
+            color: 'var(--text-secondary)',
+            textTransform: 'uppercase',
+            marginBottom: '1.75rem',
+          }}
+        >
+          {"09\u00a0\u00a0/\u00a0\u00a0What I'm Changing"}
+        </motion.span>
 
           <motion.h2
             initial={{ opacity: 0, y: 18 }}

@@ -73,13 +73,13 @@ function ClosingMark() {
 /* ─────────────────────────────────────────────
    Main component
    ───────────────────────────────────────────── */
-export default function Story() {
+export default function Story({ id }) {
   const paragraphs = getQuotes('story')     /* 4 quote object dari quotes.js */
   const headerRef  = useRef(null)
   const headerIn   = useInView(headerRef, { once: true, margin: '-10% 0px' })
 
   return (
-    <section
+    <section id={id}
       style={{
         minHeight:      '100vh',
         background:     'linear-gradient(180deg, color-mix(in srgb, var(--bg-primary) 92%, var(--text-primary)) 0%, color-mix(in srgb, var(--bg-primary) 97%, var(--text-primary)) 100%)',
@@ -114,24 +114,7 @@ export default function Story() {
         {/* ── Header ── */}
         <div ref={headerRef}>
 
-          {/* Section label */}
-          <motion.span
-            initial={{ opacity: 0, y: 14 }}
-            animate={headerIn ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-            style={{
-              display:       'block',
-              fontFamily:    "'Manrope', sans-serif",
-              fontSize:      '0.6rem',
-              fontWeight:    500,
-              letterSpacing: '0.28em',
-              color:         'var(--text-secondary)',
-              textTransform: 'uppercase',
-              marginBottom:  '2.5rem',
-            }}
-          >
-            {'03\u00a0\u00a0/\u00a0\u00a0Our Story'}
-          </motion.span>
+          
 
           {/* Decorative large open-quote */}
           <motion.span
@@ -153,6 +136,25 @@ export default function Story() {
           </motion.span>
 
           {/* Chapter heading */}
+          {/* Section label */}
+        <motion.span
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-10% 0px' }}
+          transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
+          style={{
+            display: 'block',
+            fontFamily: "'Manrope', sans-serif",
+            fontSize: '0.6rem',
+            fontWeight: 500,
+            letterSpacing: '0.28em',
+            color: 'var(--text-secondary)',
+            textTransform: 'uppercase',
+            marginBottom: '1.75rem',
+          }}
+        >
+          {'03\u00a0\u00a0/\u00a0\u00a0How We Started'}
+        </motion.span>
           <motion.h2
             initial={{ opacity: 0, y: 16 }}
             animate={headerIn ? { opacity: 1, y: 0 } : {}}
