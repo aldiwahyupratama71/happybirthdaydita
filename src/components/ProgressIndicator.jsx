@@ -5,20 +5,21 @@ import { motion, AnimatePresence } from 'framer-motion'
    Section registry — keep in sync with App.jsx
    ───────────────────────────────────────────── */
 export const SECTIONS = [
-  { index: 1, id: 'section-opening', label: 'OPENING' },
-  { index: 2, id: 'section-birthday', label: 'BIRTHDAY' },
-  { index: 3, id: 'section-story', label: 'HOW WE STARTED' },
-  { index: 4, id: 'section-timeline', label: 'OUR JOURNEY' },
-  { index: 5, id: 'section-memories', label: 'MEMORIES' },
-  { index: 6, id: 'section-little-things', label: 'THE LITTLE THINGS' },
-  { index: 7, id: 'section-reflection', label: 'MY REFLECTION' },
-  { index: 8, id: 'section-realization', label: 'WHAT I REALIZED' },
-  { index: 9, id: 'section-growth', label: "WHAT I'M CHANGING" },
-  { index: 10, id: 'section-feelings', label: 'WHAT I STILL FEEL' },
-  { index: 11, id: 'section-future', label: 'IF WE EVER TRY AGAIN' },
-  { index: 12, id: 'section-choice', label: 'MY CHOICE' },
-  { index: 13, id: 'section-letter', label: 'LETTER FOR YOU' },
-  { index: 14, id: 'section-final', label: 'FINAL' },
+  { index: 1,  id: 'section-opening',      label: 'OPENING' },
+  { index: 2,  id: 'section-birthday',     label: 'BIRTHDAY' },
+  { index: 3,  id: 'section-story',        label: 'HOW WE STARTED' },
+  { index: 4,  id: 'section-timeline',     label: 'OUR JOURNEY' },
+  { index: 5,  id: 'section-memories',     label: 'MEMORIES' },
+  { index: 6,  id: 'section-little-things',label: 'THE LITTLE THINGS' },
+  { index: 7,  id: 'section-reflection',   label: 'MY REFLECTION' },
+  { index: 8,  id: 'section-realization',  label: 'WHAT I REALIZED' },
+  { index: 9,  id: 'section-growth',       label: "WHAT I'M CHANGING" },
+  { index: 10, id: 'section-feelings',     label: 'WHAT I STILL FEEL' },
+  { index: 11, id: 'section-future',       label: 'IF WE EVER TRY AGAIN' },
+  { index: 12, id: 'section-choice',       label: 'MY CHOICE' },
+  { index: 13, id: 'section-gift',         label: 'ABOUT THIS GIFT' },
+  { index: 14, id: 'section-letter',       label: 'LETTER FOR YOU' },
+  { index: 15, id: 'section-final',        label: 'FINAL' },
 ]
 
 const TOTAL = SECTIONS.length

@@ -16,6 +16,7 @@ import Growth       from './components/Growth'
 import Feelings     from './components/Feelings'
 import Future       from './components/Future'
 import Choice       from './components/Choice'
+import Gift         from './components/Gift'
 import Letter       from './components/Letter'
 import Final        from './components/Final'
 
@@ -60,6 +61,7 @@ function App() {
         <Feelings id="section-feelings" />
         <Future id="section-future" />
         <Choice id="section-choice" />
+        <Gift   id="section-gift" />
         <Letter id="section-letter" />
         <Final id="section-final" />
       </main>

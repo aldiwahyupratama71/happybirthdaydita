@@ -85,7 +85,7 @@ export default function Final({ id }) {
             marginBottom: '1.75rem',
           }}
         >
-          {'14\u00a0\u00a0/\u00a0\u00a0Final'}
+          {'15\u00a0\u00a0/\u00a0\u00a0Final'}
         </motion.span>
         <motion.h2
           initial={{ opacity: 0, filter: 'blur(14px)', y: 8 }}
