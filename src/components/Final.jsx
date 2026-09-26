@@ -116,12 +116,12 @@ export default function Final({ id }) {
           maxWidth: '480px',
         }}>
           {[
-            { src: '/public/photos/final/final-01.jpg', rot: -8, mt: '12px' },
-            { src: '/public/photos/final/final-02.jpg', rot: 6, mt: '-8px' },
-            { src: '/public/photos/final/final-03.jpg', rot: -5, mt: '6px' },
-            { src: '/public/photos/final/final-04.jpg', rot: 9, mt: '-4px' },
-            { src: '/public/photos/final/final-05.jpg', rot: -7, mt: '10px' },
-            { src: '/public/photos/final/final-06.jpg', rot: 12, mt: '-12px' },
+            { src: '/photos/final/final-01.jpg', rot: -8, mt: '12px' },
+            { src: '/photos/final/final-02.jpg', rot: 6, mt: '-8px' },
+            { src: '/photos/final/final-03.jpg', rot: -5, mt: '6px' },
+            { src: '/photos/final/final-04.jpg', rot: 9, mt: '-4px' },
+            { src: '/photos/final/final-05.jpg', rot: -7, mt: '10px' },
+            { src: '/photos/final/final-06.jpg', rot: 12, mt: '-12px' },
           ].map((photo, i) => (
             <motion.div
               key={photo.src}
